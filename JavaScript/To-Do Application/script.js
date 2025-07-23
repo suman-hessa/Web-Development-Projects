@@ -1,26 +1,53 @@
 const search_box = document.querySelector(".search-box input")
 const add_button = document.querySelector(".btn")
 const list = document.querySelector("ul")
-const check_box = document.querySelector(".tasks ul li")
-const img = document.querySelectorAll(".tasks ul img")
+const list_items = document.querySelectorAll('ul li')
 
-check_box.addEventListener('click', ()=>{
-    img.src='/images/checked.png'
-})
-
-const create_task = () =>{
-    const newDiv = document.createElement('div');
-    const listItem = document.createElement('li');
-    const newDivImg = document.createElement('img');
-    newDivImg.src='/images/unchecked.png';
-    const newContent = document.createTextNode('Create a to-do-list application');
-    const cross = document.createTextNode('X');
-    newDiv.appendChild(newDivImg);
-    newDiv.appendChild(newContent);
-    newDiv.appendChild(cross);
-    listItem.appendChild(newDiv)
-    list.appendChild(listItem);
+function saveData(){
+    localStorage.setItem('data', list.innerHTML);
 }
 
-add_button.addEventListener('click', create_task)
+function showData(){
+    list.innerHTML = localStorage.getItem('data');
+}
 
+const addTask = async () =>{
+    if (search_box.value == ''){
+        alert("The input cannot be blank!");
+    }
+    else{
+            const listItem = document.createElement('li');
+            listItem.innerHTML = search_box.value;
+            const span = document.createElement('span');
+            span.innerHTML = '\u00d7';
+            listItem.appendChild(span);
+            list.append(listItem);
+            search_box.value = ''
+            saveData();
+    }
+}
+
+list.addEventListener('click', (event)=>{
+
+    if (event.target.tagName === "LI"){
+        element = event.target;
+        element.classList.toggle('checked');
+        saveData();  
+    }    
+    else if (event.target.tagName === "SPAN"){
+        element = event.target;
+        parent_element = element.parentElement
+        parent_element.remove()
+        saveData();
+    }  
+})
+
+add_button.addEventListener('click', addTask);
+
+search_box.addEventListener('keypress', (event)=>{
+    if (event.key === 'Enter'){
+        addTask();
+    }
+})
+
+showData();

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="#" alt="">
+        <p>First para</p>
+        <p>Second para</p>
+        <button class="btn">Click Me!</button>
+    </div>
+    <script>
+        const img = document.querySelector('div img');
+        const btn = document.querySelector('.btn');
+        parent_element = img.parentElement;
+        btn.addEventListener('click', ()=>{
+            parent_element.remove();
+        })
+        
+    </script>
+</body>
+</html>
