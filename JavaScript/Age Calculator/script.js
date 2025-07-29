@@ -50,10 +50,12 @@ function calculateAge(dateOfBirth, month_data){
     month = dateOfBirth.split('-')[1];
     day = dateOfBirth.split('-')[2];
 
-    const now = new Date();
+    const now = new Date('2023','02','28');
+    
     current_year = now.getFullYear();
-    current_month = now.getMonth() + 1;
+    current_month = now.getMonth();
     current_day = now.getDate();
+    console.log(`${current_day}-${current_month}-${current_year}`);
 
     yearDiff = current_year - year;
     monthDiff = current_month - month;
@@ -69,10 +71,16 @@ function calculateAge(dateOfBirth, month_data){
     if (dayDiff < 0){
         result_year = yearDiff;
         result_month = monthDiff - 1;
-        result_day = month_data[result_month-1] + dayDiff;
+        result_day = month_data[result_month] + dayDiff;
     }
     else{
         result_day = dayDiff;
     }
+    if (dayDiff < 0 && monthDiff == 0){
+        result_year = yearDiff - 1;
+        result_month = 12 - 1;
+        result_day = month_data[current_month-2] + dayDiff;
+    }
+    
     return `You are ${result_year} years, ${result_month} months and ${result_day} days old`;
 }

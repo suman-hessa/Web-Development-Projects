@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Parkinsans", sans-serif;
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg,rgb(89, 0, 255), rgb(189, 145, 255));
+}
+
+
+.header{
+    height: 50px;
+    width: 150px;
+    display: flex;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.header h1{
+    color: #FFFF;
+}
+
+
+.btn{
+    position: absolute;
+    top: 170px;
+    left: 100px;
+    height: 50px;
+    padding: 1.2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 2rem;
+    background: linear-gradient(#ff00ee, #f1a4ff);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.btn img{
+    height: 24px;
+    width: 24px;
+    margin-right: 1rem;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0px;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    list-style: none;
+}
+
+.note{
+    position: relative;
+    min-height: 170px;
+    min-width: 600px;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: white;
+    margin-top: 1.5rem;
+    
+}
+
+.note img{
+    position: absolute;
+    height: 24px;
+    bottom: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
