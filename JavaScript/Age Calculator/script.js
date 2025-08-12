@@ -50,10 +50,10 @@ function calculateAge(dateOfBirth, month_data){
     month = dateOfBirth.split('-')[1];
     day = dateOfBirth.split('-')[2];
 
-    const now = new Date('2023','02','28');
+    const now = new Date();
     
     current_year = now.getFullYear();
-    current_month = now.getMonth();
+    current_month = now.getMonth()+1;
     current_day = now.getDate();
     console.log(`${current_day}-${current_month}-${current_year}`);
 

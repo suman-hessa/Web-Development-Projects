@@ -4,11 +4,11 @@ const list = document.querySelector("ul")
 const list_items = document.querySelectorAll('ul li')
 
 function saveData(){
-    localStorage.setItem('data', list.innerHTML);
+    localStorage.setItem('toDoData', list.innerHTML);
 }
 
 function showData(){
-    list.innerHTML = localStorage.getItem('data');
+    list.innerHTML = localStorage.getItem('toDoData');
 }
 
 const addTask = async () =>{
