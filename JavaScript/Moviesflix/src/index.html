@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <header class="bg-[#0B3954] w-full min-h-[200px] flex flex-col items-center py-5">
+
+        <h1 class="text-5xl font-semibold h-[40%] my-5 text-[#FF5A5F]"><a href="#">Movieflix</a></h1>
+
+        <div class="flex flex-col items-center gap-4 w-full sm:flex-row px-[50px] md:grid md:grid-cols-12">
+
+            <input type="text" class="bg-white rounded-lg px-4 py-1 w-10/12 text-lg md:col-span-4" placeholder="Movie Name Here">
+            <div class="flex gap-4">
+            <select name="genres" id="genres" class="bg-white w-8/12 rounded-lg px-2 py-1 cursor-pointer text-lg md:col-span-2">
+                <option value="animation">animation</option>
+                <option value="action">action</option>
+                <option value="romance">romance</option>
+            </select>
+            <select name="year" id="year" class="bg-white w-8/12 rounded-lg px-2 py-1 cursor-pointer text-lg md:col-span-2">
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+            </select>
+            <select name="sort" id="sort" class="bg-white w-8/12 rounded-lg px-2 py-1 cursor-pointer text-lg md:col-span-2">
+                <option value="release">release date</option>
+                <option value="name">name</option>
+            </select>
+
+            </div>
+            <button class="bg-[#FF5A5F] text-white px-2 py-1 rounded-lg cursor-pointer hover:bg-[#C81D25] w-4/12 text-lg md:col-span-2">Clear all</button>
+        </div>
+    </header>
+
+    <main class="min-h-[200px]">
+        <div class="h-[70px] w-full bg-[#087E8B]">
+            <h1 class="text-white text-3xl font-semibold px-4 pt-3">Trending Now</h1>
+            </div>
+            <div class="grid grid-cols-2 gap-4 min-h-[450px] min-w-screen  bg-[] mt-4 px-4 lg:grid-cols-5" id="trending-movies">
+            <!-- Container -->
+            <!-- <div class="w-[342px] h-[513px] bg-blue-300 rounded-2xl bg-[url(https://image.tmdb.org/t/p/w342/si9tolnefLSUKaqQEGz1bWArOaL.jpg)] relative opacity-95 font[Helvetica Neue]"> -->
+              <!-- Movie Count  -->
+              <!-- <div class="bg-black text-white border-2 border-red-500 h-[70px] w-[50px] px-4 py-4 relative left-8 top-10 rounded-lg">
+                <h1 class="text-center text-2xl font-semibold text-red-500">1</h1>
+              </div> -->
+              <!-- description -->
+              <!-- <div class="text-white absolute bottom-8 left-4 w-full">
+                <h1 id="title" class="text-[1.7rem] font-bold text-shadow-lg/40">Wicked: For Good</h1> -->
+                <!-- innerContainer -->
+                <!-- <div class="flex relative">
+                  <h1 class="text-lg">2025</h1>
+                  <div class="bg-red-500 box-border px-2 rounded-lg absolute right-8">
+                    6.7
+                  </div>
+                </div> -->
+                <!-- innerContainer end -->
+                <!-- <h1 class="text-lg">Romance, Fantasy</h1>
+              </div>
+            </div>  -->
+            <!-- Container end -->
+        
+        
+        </div>    
+    </main>
+    <footer></footer>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
